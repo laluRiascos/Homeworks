@@ -1,8 +1,8 @@
 import {useState} from "react"
-import {AddCategoryB} from "./AddCategoryB"
-import { GifGridB } from "./GifGridB"
+import { AddCategoryB } from "../Challenge_05/AddCategoryB"
+import { GifGridC } from "./GifGridC"
 
-export const GiftExpertAppB = () => {
+export const GiftExpertAppC = () => {
 
     const [categories, setCategories] = useState([''])
 
@@ -24,7 +24,7 @@ export const GiftExpertAppB = () => {
             categories.map(
                 (category, key) =>
                 {
-                    return <GifGridB category={category} key={key}/>
+                    return <GifGridC category={category} key={key}/>
                 }
             )
         }
@@ -32,4 +32,4 @@ export const GiftExpertAppB = () => {
     ) 
 }
 
-export default GiftExpertAppB;
+export default GiftExpertAppC;
