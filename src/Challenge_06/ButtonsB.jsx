@@ -1,4 +1,4 @@
-import useCounter from "./useCounter"
+import { useCounter } from "./useCounter"
 import {useState} from "react"
 
 const ButtonsB = () => {

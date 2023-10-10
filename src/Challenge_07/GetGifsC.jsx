@@ -1,4 +1,5 @@
 import { useFetch } from "./useFetch"
+import { MultipleCustomHooks } from "../Challenge_08/MultipleCustomHooks"
 
 export const getGifs = async (category) => {
     
@@ -6,5 +7,6 @@ export const getGifs = async (category) => {
     const resp = await fetch (url)
     const {data} = await resp.json()
     const {...state } = useFetch(url)
+    const { counter, increment } = useCounter(1);
     return gifs
 }
