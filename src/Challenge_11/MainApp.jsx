@@ -4,7 +4,7 @@ import AboutPage from './AboutPage'
 import HomePage from './HomePage'
 import LoginPage from './LoginPage'
 
-const MainApp = () => {
+export const MainApp = () => {
     return (
         <>
             <h1> MainApp </h1>
@@ -25,5 +25,3 @@ const MainApp = () => {
         </>
     )
 }
-
-export default MainApp;
