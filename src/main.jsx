@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
 import Buttons from './Challenge_03/buttons.jsx'
 import './index.css'
 
