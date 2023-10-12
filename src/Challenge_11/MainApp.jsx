@@ -1,8 +1,8 @@
+import React from 'react';
 import {Link, Navigate, Route, Routes} from 'react-router-dom'
-import AboutPage from './AboutPage.jsx'
+import AboutPage from './AboutPage'
 import HomePage from './HomePage'
 import LoginPage from './LoginPage'
-import {NotFoundPage} from './NotFoundPage'
 
 const MainApp = () => {
     return (
