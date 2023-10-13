@@ -1,15 +1,20 @@
-export const TodoAdd = ({ onNewTodo}) => {
+import { useState } from "react"
 
-    const onFormSubmit = (event) => {
-        event.preventDefault()
+export const TodoAdd = ({ onNewTodo}) =>{
+    const [task, setTask] = useState("")
+    const onFormSubmit = (e) => {
+        if(task.replaceAll(" ","").length > 0){
+            e.preventDefault()
 
-        const newTodo = {
-            id: new Date().getTime(),
-            description: 'Hacer el proyecto',
-            done: false
+            const newTodo = {
+                id: new Date().getTime(),
+                description: task,
+                done: false
+            }
+
+            onNewTodo(newTodo)
+            setTask("")
         }
-        
-        onNewTodo(newTodo)
     }
 
     return(
