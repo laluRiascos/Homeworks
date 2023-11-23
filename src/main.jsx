@@ -4,7 +4,7 @@ import  { App }  from './App';
 import './index.css'
 import './App.css'
 import { Provider } from 'react-redux'
-import { store } from './Challenge_14/store';
+import { store } from './Challenge_13/store';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
