@@ -1,12 +1,16 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import MainApp from './Challenge_11/MainApp.jsx'
+import ReactDOM from 'react-dom/client';
 import './index.css'
-import {BrowserRouter} from "react-router-dom";
+import './App.css'
+import { BrowserRouter } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { store } from './Challenge_16/store';
+import { Crud } from './Crud';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-    <MainApp/>
-  </BrowserRouter>
+   <Provider store={store}>
+      <BrowserRouter>
+         <Crud />
+      </BrowserRouter>
+   </Provider>
 )
