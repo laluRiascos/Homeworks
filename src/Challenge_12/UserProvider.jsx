@@ -1,14 +1,26 @@
-import React, { useState } from 'react'
-import { UserContext } from './UserContext'
+import React, { useReducer } from 'react';
+import { UserContext, initialState } from './UserContext';
 
-const user = {}
+const reducer = (state, action) => {
+  switch (action.type) {
+    case 'LOGIN':
+      return { ...state, user: action.payload };
+    case 'LOGOUT':
+      return { ...state, user: null };
+    default:
+      throw new Error(`Unsupported action type ${action.type}`);
+  }
+};
 
 export const UserProvider = ({ children }) => {
-    const [user, setUser] = useState({})
+  const [state, dispatch] = useReducer(reducer, initialState);
 
-    return (
-        <UserContext.Provider value={{user, setUser}}>
-            {children}
-        </UserContext.Provider>
-    )
-}
+  const login = (user) => dispatch({ type: 'LOGIN', payload: user });
+  const logout = () => dispatch({ type: 'LOGOUT' });
+
+  return (
+    <UserContext.Provider value={{ user: state.user, login, logout }}>
+      {children}
+    </UserContext.Provider>
+  );
+};

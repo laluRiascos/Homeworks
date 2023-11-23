@@ -1,12 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client';
-import { MainApp } from './Challenge_12/MainApp';
 import './index.css'
 import './App.css'
-import { BrowserRouter } from 'react-router-dom';
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <BrowserRouter>
-     <MainApp />
-  </BrowserRouter>
-)
+  <App />
+);

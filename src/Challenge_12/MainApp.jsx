@@ -1,26 +1,20 @@
 import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
-import { AboutPage } from './AboutPage';
-import { HomePage } from './HomePage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { UserProvider } from './UserProvider';
 import { LoginPage } from './LoginPage';
-import { NavComponent } from './NavComponent';
+import Logged from './Logged';
+import { PrivateRoutes } from './PrivateRoutes';
 
-export const MainApp = () => {
+function MainApp() {
   return (
-    <>
-      <h1>MainApp</h1>
-      <hr />
-
-      {/* Use the NavComponent */}
-      <NavComponent />
-
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/*" element={<Navigate to="/about" />} />
-      </Routes>
-    </>
+    <UserProvider>
+      <Router>
+        <Routes path="/login" component={LoginPage} />
+        <PrivateRoutes path="/dashboard" component={Logged} />
+        {/* other routes */}
+      </Router>
+    </UserProvider>
   );
-};
+}
+
+export default MainApp;
