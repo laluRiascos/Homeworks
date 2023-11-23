@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client';
+import  { App }  from './App';
 import './index.css'
 import './App.css'
-import App from './App';
+import { Provider } from 'react-redux'
+import { store } from './Challenge_14/store';
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <App />
-);
+   <Provider store={store}>
+        <App />
+  </Provider>
+)
